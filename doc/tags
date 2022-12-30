@@ -1,2 +1,3 @@
-open-jira.nvim	open.txt	/*open-jira.nvim*
-open-jira.nvim.setup	open.txt	/*open-jira.nvim.setup*
+cmp-lspkind-priority	cmp-lspkind-priority.txt	/*cmp-lspkind-priority*
+cmp-lspkind-priority.compare	cmp-lspkind-priority.txt	/*cmp-lspkind-priority.compare*
+cmp-lspkind-priority.setup	cmp-lspkind-priority.txt	/*cmp-lspkind-priority.setup*

@@ -98,6 +98,9 @@ M.setup = function(config)
     end
 end
 
+---@brief [[
+---nvim-cmp comprator
+---@brief ]]
 M.compare = function(entry1, entry2)
     local kind1 = priority[entry1:get_kind()]
     local kind2 = priority[entry2:get_kind()]

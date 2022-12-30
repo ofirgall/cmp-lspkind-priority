@@ -1,5 +1,5 @@
 # cmp-lspkind-priority
-Configure the priority of LSP results for [nvim-cmp](hrsh7th/nvim-cmp) by kind.
+Configure the priority of LSP items by kind, for [nvim-cmp](hrsh7th/nvim-cmp).
 
 ## Installation
 ```lua

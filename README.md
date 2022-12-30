@@ -1,17 +1,60 @@
-# open-jira.nvim
-Opener of [open.nvim](https://github.com/ofirgall/open.nvim) that opens shorthands of Jira tickets, E.g: `JRASERVER-63928`.
+# cmp-lspkind-priority
+Configure the priority of LSP results for [nvim-cmp](hrsh7th/nvim-cmp) by kind.
 
 ## Installation
-Install [open.nvim](https://github.com/ofirgall/open.nvim) first.
 ```lua
-use 'ofirgall/open-jira.nvim'
+use 'ofirgall/cmp-lspkind-priority'
 ```
 
 ## Usage
 ```lua
--- Leave empty for default values
-require('open-jira').setup {
-    -- string|function(shorthand: string): string
-    url = 'https://jira.atlassian.com/browse/'
+local lspkind_priority = require('cmp-lspkind-priority')
+lspkind_priority.setup {
+    -- Default priority by nvim-cmp
+    priority = {
+        'Snippet',
+        'Method',
+        'Function',
+        'Constructor',
+        'Field',
+        'Variable',
+        'Class',
+        'Interface',
+        'Module',
+        'Property',
+        'Unit',
+        'Value',
+        'Enum',
+        'Keyword',
+        'Color',
+        'File',
+        'Reference',
+        'Folder',
+        'EnumMember',
+        'Constant',
+        'Struct',
+        'Event',
+        'Operator',
+        'TypeParameter',
+        'Text',
+    }
+}
+
+local compare = require('cmp.config.compare')
+require('cmp').setup{
+    sorting = {
+        comparators = {
+            lspkind_priority.compare, -- Replaces `compare.kind` + first comparator
+            compare.offset,
+            compare.exact,
+            -- compare.scopes,
+            compare.score,
+            compare.recently_used,
+            compare.locality,
+            compare.sort_text,
+            compare.length,
+            compare.order,
+        },
+    },
 }
 ```
